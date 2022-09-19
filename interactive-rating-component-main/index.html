@@ -11,6 +11,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="style.css">
 
     <title>Frontend Mentor | Interactive rating component</title>
 
@@ -27,35 +28,36 @@
   </head>
   <body>
     <!-- Rating state start -->
-    <main id="main-container">
-      <img src="./images/icon-star.svg" alt="" />
+    <main class="main-container">
+      <div class="icon">
+        <img src="./images/icon-star.svg" alt="" />
+      </div>
       <section class="text-content">
         <h1>How did we do?</h1>
         <p>
           Please let us know how we did with your support request. All feedback
-          is appreciated to help us improve our offering!/p>
+          is appreciated to help us improve our offering!
         </p>
       </section>
       <div class="rating-area">
-        <div class="rating">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-        </div>
-        <button>Submit</button>
+          <div class = "rate-btn">1</div>
+          <div class = "rate-btn">2</div>
+          <div class = "rate-btn">3</div>
+          <div class = "rate-btn">4</div>
+          <div class = "rate-btn">5</div>
       </div>
+      <button id = "submit">Submit</button>
     </main>
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <main id="thank-you-container">
-      <img src="./images/illustration-thank-you.svg" alt="Thank You Image" />
-      <h1></h1>
+    <main class="thank-you-container hidden">
+      <div class="image">
+        <img src="./images/illustration-thank-you.svg" alt="Thank You Image" />
+      </div>
       <section class="text-content">
+        <p id="rate-message">You selected <span id = "rated"></span> out of 5</p>
         <h1>Thank You!</h1>
-        <div id="selected"></div>
         <p>
           We appreciate you taking the time to give a rating. If you ever need
           more support, don’t hesitate to get in touch!
@@ -68,5 +70,8 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <script src="script.js"></script>
+
   </body>
 </html>
