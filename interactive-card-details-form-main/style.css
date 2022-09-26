@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    display: grid;
+    flex-direction: row;
+
+    grid-template-columns: 40% 30% 30%;
+
+    height: 100vh;
+}
+.background-images{
+    background-image: url("./images/bg-main-desktop.png");
+    background-size: cover;
+}
+.card-images{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    margin-left: calc(40% - 400px);
+}
+#card-front , #card-back{
+    position: relative;
+}
+.card-icon,
+.card-number-display,
+.cardholder-name-display,
+.card-expire-display,
+.CVC-display{
+    position: absolute;
+    z-index: 10;
+}
+.card-icon{top: 20px;left: 20px;}
+.card-number-display{top: 100px;left: 20px;    }
+.cardholder-name-display{top:200px;left: 20px;}
+.card-expire-display{top: 200px;right: 20px;}
+.CVC-display{top: 110px;right: 50px;}
+
+.form-area{
+    grid-column: 2 / span 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-area>form{
+    width: 60%;
+}
+.inputbox{
+    display: flex;
+    flex-direction: column;
+}
+.inline-inputbox{
+    display: flex;
+    flex-direction: row;
+}
+.exp-date-inputbox , .cvc-inputbox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: space-between;
+}
+.exp-date-inputbox>input{
+    width: 40%;
+}
+.exp-date-inputbox>label , .cvc-inputbox>label{
+    width: 100%;
+}
