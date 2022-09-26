@@ -9,7 +9,7 @@ body{
 
     font-family: 'Overpass', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 22px;
     background-color: #141519;
 
     display: flex;
@@ -24,8 +24,9 @@ body{
     display: flex;
     flex-direction: column;
 
-    max-width: 350px;
+    max-width: 400px;
     border-radius: 20px;
+    margin: 0 20px;
     padding: 25px;
     justify-content: space-between;
 
@@ -66,7 +67,7 @@ body{
     padding: 4.5%;
 }
 .text-content{
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .text-content>h1{
     color: white;
@@ -100,6 +101,9 @@ body{
     color: white;
 
     cursor: pointer;
+}
+.rate-btn:focus{
+    background-color: aqua;
 }
 #submit{
     border-style: none;
