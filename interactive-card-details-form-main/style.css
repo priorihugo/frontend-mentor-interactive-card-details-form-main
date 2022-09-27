@@ -1,14 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}
+label{ margin-bottom: 10px; font-size: 0.8rem;}
+input{ 
+    border: initial;
+    padding: 10px;
 
+    border: 2px solid hsl(279, 6%, 55%);
+    border-radius: 5px; 
+
+}
 .main-container{
     display: grid;
     flex-direction: row;
 
-    grid-template-columns: 40% 30% 30%;
+    grid-template-columns: 1fr 1fr 1fr;
 
     height: 100vh;
 }
@@ -17,29 +31,44 @@
     background-size: cover;
 }
 .card-images{
+    color: white;
+
     display: flex;
     flex-direction: column;
     height: 100vh;
     justify-content: center;
     position: absolute;
-    margin-left: calc(40% - 400px);
+    width: 550px;
+    margin-left: calc(33% - 250px );
 }
 #card-front , #card-back{
     position: relative;
+    width: 80%;
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px 30px rgba(0, 0, 0, 0.116);
 }
+#card-front{ margin-bottom: 40px; margin-right:auto;}
+#card-back{ margin-left: auto;}
+
+.card-background{ width: 100%; height: auto;}
+
 .card-icon,
 .card-number-display,
 .cardholder-name-display,
 .card-expire-display,
-.CVC-display{
-    position: absolute;
-    z-index: 10;
+.CVC-display{ position: absolute;    z-index: 10;}
+.card-icon{top: 25px;left: 25px; height: 50px; width: auto;}
+.card-number-display{bottom: 80px;left: 30px;  font-size: 1.5rem; letter-spacing: 4px;  }
+.cardholder-name-display{
+    bottom: 30px;
+    left: 30px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
-.card-icon{top: 20px;left: 20px;}
-.card-number-display{top: 100px;left: 20px;    }
-.cardholder-name-display{top:200px;left: 20px;}
-.card-expire-display{top: 200px;right: 20px;}
-.CVC-display{top: 110px;right: 50px;}
+.card-expire-display{bottom: 30px;right: 30px;}
+.CVC-display{top: 108px; right: 60px; font-size: 1rem;}
 
 .form-area{
     grid-column: 2 / span 2;
@@ -48,27 +77,51 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-left: 33%;
+
+    color: hsl(278, 68%, 11%);
 }
-.form-area>form{
-    width: 60%;
+.form-area>form , .thank-you-container{
+    max-width: 400px;
+    margin-left: 20px;
+}
+.thank-you-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .inputbox{
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 .inline-inputbox{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
 }
 .exp-date-inputbox , .cvc-inputbox{
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
-    justify-content: space-between;
+    width: 45%;
 }
-.exp-date-inputbox>input{
-    width: 40%;
-}
-.exp-date-inputbox>label , .cvc-inputbox>label{
+.exp-date-inputbox>input{width: 40%; margin-right: 5%;}
+.cvc-inputbox>input{width: 100%;}
+.exp-date-inputbox>label,.cvc-inputbox>label{width:100%;}
+#submit-btn , #continue-btn{
     width: 100%;
+    padding: 15px;
+    background-color: hsl(278, 68%, 11%);
+    border-radius: 8px;
+    color: white;
+}
+#continue-bnt{
+    width: 400px;
+}
+.hidden{
+    display: none;
 }

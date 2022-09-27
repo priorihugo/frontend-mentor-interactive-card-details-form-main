@@ -34,14 +34,14 @@
       </div>
       <div class="card-images">
         <div id="card-front">
-          <img src="./images/bg-card-front.png" />
+          <img src="./images/bg-card-front.png" class="card-background"/>
           <img src="./images/card-logo.svg" alt="" class="card-icon">
           <p class="card-number-display">0000 0000 0000 0000</p>
           <p class="cardholder-name-display">Jane Appleseed</p>
           <p class="card-expire-display">00/00</p>
         </div>
         <div id="card-back">
-          <img src="./images/bg-card-back.png" />
+          <img src="./images/bg-card-back.png" class="card-background" />
           <p class="CVC-display">123</p>
         </div>
       </div>
@@ -89,12 +89,19 @@
           </div>
           <button id="submit-btn">Confirm</button>
         </form>
+
+        <section class="thank-you-container hidden">
+          <img src="./images/icon-complete.svg" alt="">
+          <h1>Thank you!</h1>
+          <p>
+            We've added your card details Continue
+          </p>
+          <button id="continue-btn">Continue</button>
+        </section>
+
+
       </section>
     </main>
-    <!-- Completed state start -->
-
-    Thank you! We've added your card details Continue
-
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
