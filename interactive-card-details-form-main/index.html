@@ -38,7 +38,7 @@
           <img src="./images/card-logo.svg" alt="" class="card-icon">
           <p class="card-number-display">0000 0000 0000 0000</p>
           <p class="cardholder-name-display">Jane Appleseed</p>
-          <p class="card-expire-display">00/00</p>
+          <p class="exp-date-display"><span class="exp-date-month-display">00</span>/<span class="exp-date-year-display">00</span></p>
         </div>
         <div id="card-back">
           <img src="./images/bg-card-back.png" class="card-background" />
@@ -72,13 +72,13 @@
               <label for="exp-date">Exp. Date (MM/YY)</label>
               <input
                 type="text"
-                name="exp-date"
+                name="exp-date-month"
                 id="exp-date-month"
                 placeholder="MM"
               />
               <input
                 type="text"
-                name="exp-date"
+                name="exp-date-year"
                 id="exp-date-year"
                 placeholder="YY"
               />

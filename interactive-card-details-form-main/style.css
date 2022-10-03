@@ -58,8 +58,9 @@ input{
 .card-icon,
 .card-number-display,
 .cardholder-name-display,
-.card-expire-display,
-.cvc-display{ position: absolute;    z-index: 10;}
+.exp-date-display,
+.cvc-display{ position: absolute;    z-index: 10; overflow: hidden;}
+
 .card-icon{top: 25px;left: 25px; height: 50px; width: auto;}
 .card-number-display{bottom: 80px;left: 30px;  font-size: 1.5rem; letter-spacing: 4px;  }
 .cardholder-name-display{
@@ -68,8 +69,9 @@ input{
     font-size: 1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    max-width: 70%;
 }
-.card-expire-display{bottom: 30px;right: 30px;}
+.exp-date-display{bottom: 30px;right: 30px;}
 .cvc-display{top: 108px; right: 60px; font-size: 1rem;}
 
 .form-area{
@@ -114,6 +116,8 @@ input{
 .exp-date-inputbox>input{width: 40%; margin-right: 5%;}
 .cvc-inputbox>input{width: 100%;}
 .exp-date-inputbox>label,.cvc-inputbox>label{width:100%;}
+
+
 #submit-btn , #continue-btn{
     width: 100%;
     padding: 15px;
