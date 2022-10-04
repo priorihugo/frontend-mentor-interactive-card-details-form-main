@@ -9,14 +9,38 @@ body{
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
 }
-label{ margin-bottom: 10px; font-size: 0.8rem;}
+label{
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 input{ 
     border: initial;
+
+    position: relative;
     padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 
-    border: 2px solid hsl(279, 6%, 55%);
+    border: 2px solid hsl(270, 3%, 87%);
     border-radius: 5px; 
+    outline: none;
 
+    cursor: pointer;
+}
+input:focus{
+    border: 2px double transparent;
+    background-image: linear-gradient(white , white),
+    linear-gradient(to right , hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-origin: border-box;
+    background-clip: padding-box , border-box;
+}
+input::placeholder{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 .main-container{
     display: grid;
@@ -99,7 +123,7 @@ input{
 .inputbox{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
 }
 .inline-inputbox{
     display: flex;
@@ -117,7 +141,11 @@ input{
 .cvc-inputbox>input{width: 100%;}
 .exp-date-inputbox>label,.cvc-inputbox>label{width:100%;}
 
-
+.err-msg{
+    color: red;
+    font-size: 0.8rem;
+    visibility: hidden;
+}
 #submit-btn , #continue-btn{
     width: 100%;
     padding: 15px;
@@ -125,9 +153,18 @@ input{
     border-radius: 8px;
     color: white;
 }
+#submit-btn:hover , #continue-btn:hover{
+    cursor: pointer;
+}
 #continue-bnt{
     width: 400px;
 }
-.hidden{
+.display-none{
     display: none;
+}
+.show-message{
+    visibility: visible;
+}
+input.invalid{
+    border: 2px solid hsl(0, 100%, 66%);
 }
