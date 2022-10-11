@@ -5,13 +5,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+html{
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
 }
 label{
     margin-bottom: 10px;
-    font-size: 0.8rem;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -38,20 +38,17 @@ input:focus{
     background-clip: padding-box , border-box;
 }
 input::placeholder{
-    font-size: 1rem;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 500;
 }
 .main-container{
-    display: grid;
-    flex-direction: row;
-
-    grid-template-columns: 1fr 1fr 1fr;
-
+    display: flex;
     height: 100vh;
 }
 .background-images{
     background-image: url("./images/bg-main-desktop.png");
+    width: 33%;
     background-size: cover;
 }
 .card-images{
@@ -63,14 +60,16 @@ input::placeholder{
     justify-content: center;
     position: absolute;
     width: 550px;
-    margin-left: calc(33% - 250px );
+
+    /*centralize card images div in the middle of the line */
+    margin-left: calc(33% - 275px );
 }
 #card-front , #card-back{
     position: relative;
-    width: 80%;
+    width: 450px;
     height: 240px;
     border-radius: 10px;
-    box-shadow: 10px 10px 30px 30px rgba(0, 0, 0, 0.116);
+    box-shadow: 10px 10px 30px 30px rgba(0, 0, 0, 0.10);
 
     overflow: hidden;
 }
@@ -83,36 +82,36 @@ input::placeholder{
 .card-number-display,
 .cardholder-name-display,
 .exp-date-display,
-.cvc-display{ position: absolute;    z-index: 10; overflow: hidden;}
+.cvc-display{ position: absolute; overflow: hidden; flex-wrap: nowrap;}
 
-.card-icon{top: 25px;left: 25px; height: 50px; width: auto;}
-.card-number-display{bottom: 80px;left: 30px;  font-size: 1.5rem; letter-spacing: 4px;  }
+.card-icon{top: 10%;left: 5%; height: 20%; width: auto;}
+.card-number-display{bottom: 32%;left: 5%;  font-size: 1.5rem; letter-spacing: 0.22rem;  }
 .cardholder-name-display{
-    bottom: 30px;
-    left: 30px;
+    bottom: 12%;
+    left: 5%;
     font-size: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.11rem;
     text-transform: uppercase;
     max-width: 70%;
 }
-.exp-date-display{bottom: 30px;right: 30px;}
-.cvc-display{top: 108px; right: 60px; font-size: 1rem;}
+.exp-date-display{bottom: 12%; right: 5%;}
+.cvc-display{top: 45%; right: 12%; font-size: 1rem;}
 
 .form-area{
-    grid-column: 2 / span 2;
+    width: 66%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    margin-left: 33%;
-
     color: hsl(278, 68%, 11%);
 }
 .form-area>form , .thank-you-container{
     max-width: 400px;
-    margin-left: 20px;
+    margin-left: 40%;
+    margin-right: auto;
+
 }
 .thank-you-container{
     display: flex;
@@ -143,7 +142,7 @@ input::placeholder{
 
 .err-msg{
     color: red;
-    font-size: 0.8rem;
+    font-size: 14px;
     visibility: hidden;
 }
 #submit-btn , #continue-btn{
@@ -167,4 +166,112 @@ input::placeholder{
 }
 input.invalid{
     border: 2px solid hsl(0, 100%, 66%);
+}
+
+@media screen and (max-width: 1200px) {
+
+    html{
+        font-size: 14px;
+    }
+    .card-images{
+        width: 420px;
+        margin-left: calc(33% - 210px);
+    }
+    #card-front , #card-back{
+        width: 350px;
+        height: 192px;
+        margin-bottom: 31px;
+    }  
+    .form-area>form , .thank-you-container{
+        max-width: 350px;
+        margin-right: 20px;
+    }  
+}
+@media screen and (max-width: 780px) {
+
+    html{
+        font-size: 10px;
+    }
+    .card-images{
+        width: 308px;
+        margin-left: calc(33% - 154px);
+    }
+    #card-front , #card-back{
+        width: 250px;
+        height: 140px;
+        margin-bottom: 22px;
+    }  
+    .form-area>form , .thank-you-container{
+        max-width: 350px;
+        margin-right: 20px;
+    }  
+    
+}
+@media screen and (max-width: 600px) {
+
+    html{
+        font-size: 14px;
+    }
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .background-images{
+        width: 100vw;
+        height: 35%;
+    }
+    .form-area{
+        width: 100vw;
+        height: 66%;
+        margin: auto;
+    }
+    .form-area>form , .thank-you-container{
+        max-width: 400px;
+        margin: 20% 20px auto 20px;
+
+    }  
+    .card-images{
+        width: 90%;
+        height: fit-content;
+        margin: 40px 15px 0 15px;
+    }
+    #card-front , #card-back{
+        /*reseting all margins */
+        margin: 0;
+
+        width: 350px;
+        height: 192px;
+    }  
+    #card-front{
+        position: absolute;
+        margin-top: 210px;
+        margin-right: auto;
+        z-index: 1;
+
+    }
+    #card-back{
+        margin-bottom: auto;
+        margin-left: auto;
+
+    }
+}
+@media screen and (max-width: 440px){
+    html{
+        font-size: 10px;
+    }
+    .background-images{
+        height: 25%;
+    }
+    #card-front , #card-back{
+        width: 250px;
+        height: 140px;
+    } 
+    #card-front{
+        margin-top: 175px;
+    }
+    .form-area>form , .thank-you-container{
+        margin-top: 70px;
+        width: 94%;
+    }  
+
 }
