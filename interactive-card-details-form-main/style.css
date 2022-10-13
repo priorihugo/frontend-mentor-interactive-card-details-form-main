@@ -175,7 +175,7 @@ input.invalid{
     }
     .card-images{
         width: 420px;
-        margin-left: calc(33% - 210px);
+        margin-left: calc(33% - 250px);
     }
     #card-front , #card-back{
         width: 350px;
@@ -193,20 +193,22 @@ input.invalid{
         font-size: 10px;
     }
     .card-images{
-        width: 308px;
-        margin-left: calc(33% - 154px);
+        width: 330px;
+        margin-left: 15px;
     }
     #card-front , #card-back{
-        width: 250px;
-        height: 140px;
-        margin-bottom: 22px;
+        width: 290px;
+        height: 154px;
+        margin-bottom: 10px;
     }  
     .form-area>form , .thank-you-container{
-        max-width: 350px;
-        margin-right: 20px;
+        max-width: 235px;
+        margin-right: 15px;
     }  
     
 }
+
+/*mobile devices*/
 @media screen and (max-width: 600px) {
 
     html{
@@ -218,40 +220,41 @@ input.invalid{
     }
     .background-images{
         width: 100vw;
-        height: 35%;
+        height: 250px;
     }
     .form-area{
         width: 100vw;
-        height: 66%;
-        margin: auto;
+        justify-content: flex-start;
     }
     .form-area>form , .thank-you-container{
+        position: absolute;
         max-width: 400px;
-        margin: 20% 20px auto 20px;
+        margin: 80px 20px auto 20px;
 
     }  
     .card-images{
+        position: absolute;
         width: 90%;
-        height: fit-content;
-        margin: 40px 15px 0 15px;
+        height: 300px;
+        margin: 20px auto;
+        align-self: center;
     }
     #card-front , #card-back{
         /*reseting all margins */
         margin: 0;
-
+        
+        position: absolute;
         width: 350px;
         height: 192px;
     }  
     #card-front{
-        position: absolute;
-        margin-top: 210px;
-        margin-right: auto;
+        bottom: 0;
+        left: 0;
         z-index: 1;
-
     }
     #card-back{
-        margin-bottom: auto;
-        margin-left: auto;
+        top: 0;
+        right: 0;
 
     }
 }
@@ -260,17 +263,20 @@ input.invalid{
         font-size: 10px;
     }
     .background-images{
-        height: 25%;
+        height: 200px;
+    }
+    .card-images{
+        height: 215px;
     }
     #card-front , #card-back{
         width: 250px;
-        height: 140px;
+        height: 138px;
     } 
     #card-front{
         margin-top: 175px;
     }
     .form-area>form , .thank-you-container{
-        margin-top: 70px;
+        margin-top: 50px;
         width: 94%;
     }  
 
